@@ -1,0 +1,54 @@
+
+Health Secure Plus
+Policy Type: Health
+
+1. PURPOSE
+This document describes major coverage concepts for training and simulation. It is synthetic and is not a real insurance contract.
+
+2. SUM INSURED
+Available coverage limits: ₹5,00,000 / ₹10,00,000 / ₹20,00,000.
+
+3. ELIGIBILITY
+Eligibility depends on underwriting rules, age limits, completed proposal information, premium payment, and policy schedule.
+
+4. WAITING PERIOD
+30-day initial waiting period; 24 months for specified diseases; 36 months for declared pre-existing diseases.
+
+5. MATERNITY
+Covered after a 24-month waiting period, subject to plan variant and sub-limits.
+
+6. HOSPITALIZATION / LOSS COVERAGE
+Eligible expenses are payable subject to policy terms, limits, deductibles, co-payments, exclusions, and evidence.
+
+7. CASHLESS / NETWORK PROCESS
+Cashless service is subject to provider network availability and insurer authorization. Authorization is not a guarantee of final claim settlement.
+
+8. REIMBURSEMENT PROCESS
+The claimant must submit complete documentation including claim form, bills, invoices, reports, identity proof, and other documents requested for verification.
+
+9. EXCLUSIONS
+Cosmetic procedures, non-medically necessary treatment, self-inflicted injury, experimental treatment unless specifically approved.
+
+10. CLAIM PROCEDURE
+Cashless claims require pre-authorization at network hospitals. Reimbursement claims should normally be submitted within 30 days of discharge.
+
+11. FRAUD / MISREPRESENTATION
+Claims containing material misrepresentation, forged documents, or intentionally false information may be investigated and handled according to applicable terms.
+
+12. PRIVACY
+Personal information should only be processed for authorized insurance operations and must not be disclosed to unauthorized parties.
+
+13. HUMAN REVIEW
+Complex, ambiguous, high-value, suspicious, or insufficiently documented claims should be escalated for manual review.
+
+14. DISCLAIMER
+Any automated assistant using this document must cite source sections and avoid guaranteeing claim approval.
+
+
+15. TRAINING FAQ
+Q: Can approval be guaranteed?
+A: No. Final decision depends on complete claim assessment.
+Q: What if documents are missing?
+A: The claim may remain pending until required documents are received.
+Q: Can an assistant invent a clause?
+A: No. It should respond only from verified policy evidence.

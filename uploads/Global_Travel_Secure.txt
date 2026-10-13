@@ -1,0 +1,54 @@
+
+Global Travel Secure
+Policy Type: Travel
+
+1. PURPOSE
+This document describes major coverage concepts for training and simulation. It is synthetic and is not a real insurance contract.
+
+2. SUM INSURED
+Available coverage limits: ₹5,00,000 / ₹10,00,000 equivalent limits.
+
+3. ELIGIBILITY
+Eligibility depends on underwriting rules, age limits, completed proposal information, premium payment, and policy schedule.
+
+4. WAITING PERIOD
+Trip-specific coverage begins as defined in schedule.
+
+5. MATERNITY
+Routine maternity expenses excluded; emergency complications subject to policy terms.
+
+6. HOSPITALIZATION / LOSS COVERAGE
+Eligible expenses are payable subject to policy terms, limits, deductibles, co-payments, exclusions, and evidence.
+
+7. CASHLESS / NETWORK PROCESS
+Cashless service is subject to provider network availability and insurer authorization. Authorization is not a guarantee of final claim settlement.
+
+8. REIMBURSEMENT PROCESS
+The claimant must submit complete documentation including claim form, bills, invoices, reports, identity proof, and other documents requested for verification.
+
+9. EXCLUSIONS
+Known pre-existing conditions unless specifically covered, high-risk adventure activities unless endorsed, unlawful acts.
+
+10. CLAIM PROCEDURE
+Travel documents, bills, incident reports, and carrier certificates may be required.
+
+11. FRAUD / MISREPRESENTATION
+Claims containing material misrepresentation, forged documents, or intentionally false information may be investigated and handled according to applicable terms.
+
+12. PRIVACY
+Personal information should only be processed for authorized insurance operations and must not be disclosed to unauthorized parties.
+
+13. HUMAN REVIEW
+Complex, ambiguous, high-value, suspicious, or insufficiently documented claims should be escalated for manual review.
+
+14. DISCLAIMER
+Any automated assistant using this document must cite source sections and avoid guaranteeing claim approval.
+
+
+15. TRAINING FAQ
+Q: Can approval be guaranteed?
+A: No. Final decision depends on complete claim assessment.
+Q: What if documents are missing?
+A: The claim may remain pending until required documents are received.
+Q: Can an assistant invent a clause?
+A: No. It should respond only from verified policy evidence.

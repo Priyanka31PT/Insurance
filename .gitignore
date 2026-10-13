@@ -1,0 +1,11 @@
+# Local environment variables containing private API Keys
+.env
+
+# Python virtual environment folder
+venv/
+__pycache__/
+*.pyc
+
+# Local system files
+.DS_Store
+Thumbs.db

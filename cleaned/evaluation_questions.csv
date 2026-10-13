@@ -1,0 +1,6 @@
+0,1,2,3,4
+EVAL001,Health Secure Plus,What is the maternity waiting period?,24 months,Maternity
+EVAL002,Family Care Gold,Is dental treatment covered?,Only under covered circumstances such as accident according to policy terms,Exclusions
+EVAL003,Critical Care Elite,Is maternity covered?,"No, not under base critical illness plan",Maternity
+EVAL004,Motor Protect Comprehensive,Is drunk driving covered?,No,Exclusions
+EVAL005,Global Travel Secure,Are known pre-existing conditions covered?,Generally excluded unless specifically covered,Exclusions

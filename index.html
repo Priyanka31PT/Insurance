@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Claim & Policy Intelligence Hub</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --panel-bg: #ffffff;
+            --text-color: #1e293b;
+            --primary: #2563eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --border: #e2e8f0;
+            --node-inactive: #94a3b8;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 { margin: 0; color: #1e3a8a; font-size: 2.2rem; }
+        p.subtitle { margin: 8px 0 0 0; color: #64748b; font-size: 1.1rem; }
+
+        .search-panel {
+            background: var(--panel-bg);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            border: 1px solid var(--border);
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 12px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 14px 18px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input[type="text"]:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        button:hover { background-color: #1d4ed8; }
+
+        /* --- LANGGRAPH VISUALIZER STYLES --- */
+        .graph-card {
+            background: var(--panel-bg);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .graph-card h3 { margin-top: 0; color: #0f172a; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+
+        .graph-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            padding: 10px 0;
+        }
+
+        .graph-node {
+            background: #f1f5f9;
+            border: 2px solid var(--node-inactive);
+            color: #64748b;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            text-align: center;
+            min-width: 140px;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .graph-arrow {
+            flex-grow: 1;
+            height: 2px;
+            background: var(--border);
+            margin: 0 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .graph-arrow::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -4px;
+            width: 0;
+            height: 0;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 6px solid var(--border);
+        }
+
+        /* Active Graph States */
+        .node-active-green {
+            background: #d1fae5 !important;
+            border-color: var(--success) !important;
+            color: #065f46 !important;
+            box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .node-active-blue {
+            background: #dbeafe !important;
+            border-color: var(--primary) !important;
+            color: #1e40af !important;
+            box-shadow: 0 0 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .node-blocked-red {
+            background: #fee2e2 !important;
+            border-color: var(--danger) !important;
+            color: #991b1b !important;
+            box-shadow: 0 0 12px rgba(239, 68, 68, 0.3);
+        }
+
+        .output-panel {
+            background: var(--panel-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            min-height: 150px;
+        }
+
+        .output-panel h2 { margin-top: 0; color: #1e3a8a; font-size: 1.4rem; margin-bottom: 15px; }
+        
+        .response-text {
+            font-size: 16px;
+            line-height: 1.7;
+            white-space: pre-wrap;
+            color: #334155;
+        }
+
+        .loading-text {
+            color: #64748b;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Insurance Claim Intelligence Hub</h1>
+        <p class="subtitle">LangGraph State Orchestration & Security Validation Platform</p>
+    </header>
+
+    <!-- Query Input Workspace -->
+    <div class="search-panel">
+        <div class="input-group">
+            <input type="text" id="queryInput" placeholder="Ask factual (e.g., status of CLM300000) or analytical text metrics...">
+            <button id="submitBtn" onclick="runGraphPipeline()">Execute Node</button>
+        </div>
+    </div>
+
+    <!-- Live LangGraph Active Tracking Visualizer -->
+    <div class="graph-card">
+        <h3>Live LangGraph Node Path Trace</h3>
+        <div class="graph-container">
+            <div id="node-start" class="graph-node">START</div>
+            <div class="graph-arrow"></div>
+            
+            <div id="node-guard" class="graph-node">Input Guardrail</div>
+            <div class="graph-arrow"></div>
+            
+            <div id="node-router" class="graph-node">Router Node</div>
+            <div class="graph-arrow"></div>
+            
+            <div id="node-backend" class="graph-node">Execution Backend</div>
+            <div class="graph-arrow"></div>
+            
+            <div id="node-end" class="graph-node">END</div>
+        </div>
+    </div>
+
+    <!-- Terminal Output Container -->
+    <div class="output-panel">
+        <h2>System Response Window</h2>
+        <div id="outputText" class="response-text">Submit an insurance query above to trigger the graph processing engine...</div>
+    </div>
+</div>
+
+<script>
+    function resetGraphNodes() {
+        const nodes = ['node-start', 'node-guard', 'node-router', 'node-backend', 'node-end'];
+        nodes.forEach(id => {
+            const el = document.getElementById(id);
+            el.className = 'graph-node';
+            if(id === 'node-backend') el.textContent = 'Execution Backend';
+        });
+    }
+
+    async function runGraphPipeline() {
+        const queryInput = document.getElementById('queryInput').value.trim();
+        const outputText = document.getElementById('outputText');
+        
+        if (!queryInput) {
+            alert("Please enter a query instruction.");
+            return;
+        }
+
+        resetGraphNodes();
+        
+        // Flag visual start node transitions
+        document.getElementById('node-start').classList.add('node-active-blue');
+        outputText.innerHTML = '<span class="loading-text">Traversing graph pathways... compiling memory indices...</span>';
+
+        try {
+            const response = await fetch('http://127.0.0', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query: queryInput })
+            });
+
+            const data = await response.json();
+            
+            // Step 1: Input Guardrail Node Evaluation
+            document.getElementById('node-guard').classList.add(
+                data.guardrail_status === 'BLOCKED' ? 'node-blocked-red' : 'node-active-green'
+            );
+
+            if (data.guardrail_status === 'BLOCKED') {
+                document.getElementById('node-end').classList.add('node-blocked-red');
+                outputText.textContent = data.response;
+                outputText.style.color = '#ef4444';
+                return;
+            }
+
+            // Step 2: Router Node Evaluation
+            document.getElementById('node-router').classList.add('node-active-green');
+
+            // Step 3: Execution Backend Route Split Evaluation
+            const backendNode = document.getElementById('node-backend');
+            if (data.route_taken === 'factual') {
+                backendNode.textContent = 'Factual Backend';
+                backendNode.classList.add('node-active-green'); // Green signifies zero-token dictionary bypass
+            } else {
+                backendNode.textContent = 'Analytical RAG';
+                backendNode.classList.add('node-active-blue');  // Blue signifies LLM token synthesis route
+            }
+
+            // Step 4: Reach Final End Terminal node State
+            document.getElementById('node-end').classList.add('node-active-green');
+            
+            // Output payload delivery text adjustment
+            outputText.textContent = data.response;
+            outputText.style.color = '#334155';
+
+        } catch (error) {
+            outputText.textContent = "Fatal Gateway Timeout: Ensure your Flask application backend (app.py) is running on http://127.0.0.1:5000";
+            outputText.style.color = '#ef4444';
+            document.getElementById('node-guard').classList.add('node-blocked-red');
+
+            document.getElementById('node-end').classList.add('node-blocked-red');
+}
+}
